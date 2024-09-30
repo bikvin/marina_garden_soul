@@ -9,8 +9,13 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
+        bodybackground: "#ededed",
+        maingreen: "#57722C",
+      },
+      fontFamily: {
+        // Adding Nunito Sans and Cormorant Garamond to the Tailwind config
+        nunito: ['"Nunito Sans"', "sans-serif"],
+        cormorant: ['"Cormorant Garamond"', "serif"],
       },
     },
   },
