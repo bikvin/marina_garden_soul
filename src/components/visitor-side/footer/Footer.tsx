@@ -15,7 +15,7 @@ export default function Footer() {
         <ul className="flex flex-col gap-2">
           <li>
             <a
-              href="https://wa.me/7926ххххххх"
+              href="https://wa.me/79204104820"
               className="flex items-center justify-start gap-2 hover:scale-110 origin-[0%_50%]"
             >
               <Image
@@ -58,7 +58,11 @@ export default function Footer() {
             </a>
           </li>
         </ul>
-        <p className="font-bold mb-6">+995 59122 03 54</p>
+        <div className="mb-6">
+          <p className="font-bold">+995 59122 03 54</p>
+          <p className="font-bold">+7 920 410 48 20</p>
+        </div>
+
         <p className="font-bold mb-6">Ландшафтный дизайнер Марина Шестакова</p>
       </div>
     </footer>

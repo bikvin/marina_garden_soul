@@ -15,7 +15,7 @@ export default function About() {
         initial={{ opacity: 0, x: 100 }}
         whileInView={{ opacity: 1, x: 0 }}
         transition={{ duration: 1, ease: "backInOut" }}
-        viewport={{ once: true, amount: 0.1 }}
+        viewport={{ once: true, amount: 0.4 }}
       >
         <Image
           className="rounded-full h-[200px] w-[200px] mb-6"

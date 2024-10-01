@@ -6,6 +6,8 @@ export default function Portfolio() {
   const SLIDES = [
     { filename: "dog.jpeg" },
     { filename: "fence.jpeg" },
+    { filename: "variant1.jpeg" },
+    { filename: "variant2.jpeg" },
     { filename: "flowers.jpeg" },
     { filename: "plan.jpeg" },
     { filename: "pond.jpeg" },
