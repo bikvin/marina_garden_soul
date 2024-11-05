@@ -1,0 +1,19 @@
+.sortableItem {
+  width: 160px;
+  height: 120px;
+  border: 1px solid #ccc;
+  background-color: #eee;
+  border-radius: 5px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sortableContainer {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  padding: 20px;
+  justify-content: flex-start;
+}

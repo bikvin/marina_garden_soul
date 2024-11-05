@@ -4,7 +4,13 @@ import React from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 
-export default function About() {
+export default function About({
+  description_header,
+  description,
+}: {
+  description_header: string;
+  description: string;
+}) {
   return (
     <section
       id="about"
@@ -25,15 +31,8 @@ export default function About() {
           alt=""
         />
         <div className="p-0 md:p-14 flex flex-col justify-center">
-          <h4 className="uppercase pb-4">
-            Привет, мена зовут Марина и я — ландшафтный дизайнер.
-          </h4>
-          <p className="font-thin tracking-widest">
-            Создаю гармоничные и функциональные пространства, которые отражают
-            вашу индивидуальность и природную красоту. Моя задача — превратить
-            любой участок в уникальный уголок природы, где каждый элемент
-            подчеркивает стиль и атмосферу.
-          </p>
+          <h4 className="uppercase pb-4">{description_header}</h4>
+          <p className="font-thin tracking-widest">{description}</p>
         </div>
       </motion.div>
     </section>

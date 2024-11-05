@@ -1,19 +1,35 @@
 import React from "react";
 import EmblaCarousel from "@/components/visitor-side/portfolio/EmblaCarousel";
 import { EmblaOptionsType } from "embla-carousel";
+import { db } from "@/db";
 
-export default function Portfolio() {
-  const SLIDES = [
-    { filename: "dog.jpeg" },
-    { filename: "fence.jpeg" },
-    { filename: "variant1.jpeg" },
-    { filename: "variant2.jpeg" },
-    { filename: "flowers.jpeg" },
-    { filename: "plan.jpeg" },
-    { filename: "pond.jpeg" },
-    { filename: "pool.jpeg" },
-    { filename: "trees.jpeg" },
-  ];
+export default async function Portfolio() {
+  let projectsData = [];
+
+  try {
+    const projects = await db.project.findUnique({ where: { id: 1 } });
+
+    if (projects && projects.fileNamesArr) {
+      projectsData = JSON.parse(projects.fileNamesArr);
+    } else {
+      console.warn("No data found or fileNamesArr is empty.");
+    }
+  } catch (err) {
+    console.error("Error fetching certificates:", err);
+  }
+
+  // const SLIDES = [
+  //   { filename: "dog.jpeg" },
+  //   { filename: "fence.jpeg" },
+  //   { filename: "variant1.jpeg" },
+  //   { filename: "variant2.jpeg" },
+  //   { filename: "flowers.jpeg" },
+  //   { filename: "plan.jpeg" },
+  //   { filename: "pond.jpeg" },
+  //   { filename: "pool.jpeg" },
+  //   { filename: "trees.jpeg" },
+  // ];
+
   const OPTIONS: EmblaOptionsType = { loop: true };
 
   return (
@@ -26,7 +42,7 @@ export default function Portfolio() {
           Мои проекты:
         </h3>
       </div>
-      <EmblaCarousel slides={SLIDES} options={OPTIONS} />
+      <EmblaCarousel slides={projectsData} options={OPTIONS} />
     </section>
   );
 }

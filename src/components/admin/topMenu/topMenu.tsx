@@ -66,6 +66,14 @@ export default function Header({ page }: { page?: string }) {
 
           <TopMenuItem
             currentPage={page}
+            menuItemTargetPage="projects"
+            link="/admin/projects"
+          >
+            Проекты
+          </TopMenuItem>
+
+          <TopMenuItem
+            currentPage={page}
             menuItemTargetPage="user"
             link="/admin/user"
           >

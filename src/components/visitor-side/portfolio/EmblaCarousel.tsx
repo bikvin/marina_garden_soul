@@ -14,7 +14,7 @@ import Autoplay from "embla-carousel-autoplay";
 import useEmblaCarousel from "embla-carousel-react";
 
 type PropType = {
-  slides: { filename: string }[];
+  slides: { id: string; name: string }[];
   options?: EmblaOptionsType;
 };
 
@@ -46,10 +46,10 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
       <div className={classes.embla__viewport} ref={emblaRef}>
         <div className={classes.embla__container}>
           {slides.map((item) => (
-            <div className={classes.embla__slide} key={item.filename}>
+            <div className={classes.embla__slide} key={item.name}>
               <div className={classes.embla__slide__number}>
                 <Image
-                  src={`/img/portfolio/${item.filename}`}
+                  src={`${process.env.NEXT_PUBLIC_AWS_S3_BUCKET_PROTOCOL}://${process.env.NEXT_PUBLIC_AWS_S3_BUCKET_LINK}/projects/${item.name}`}
                   fill={true}
                   alt=""
                   style={{ objectFit: "contain" }}

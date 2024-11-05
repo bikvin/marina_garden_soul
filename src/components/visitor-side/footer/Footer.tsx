@@ -1,7 +1,19 @@
 import React from "react";
 import Image from "next/image";
 
-export default function Footer() {
+export default function Footer({
+  whatsapp,
+  telegram,
+  instagram,
+  phone1,
+  phone2,
+}: {
+  whatsapp: string;
+  telegram: string;
+  instagram: string;
+  phone1: string;
+  phone2: string;
+}) {
   return (
     <footer
       id="footer"
@@ -15,7 +27,7 @@ export default function Footer() {
         <ul className="flex flex-col gap-2">
           <li>
             <a
-              href="https://wa.me/79204104820"
+              href={`https://wa.me/${whatsapp}`}
               className="flex items-center justify-start gap-2 hover:scale-110 origin-[0%_50%]"
             >
               <Image
@@ -25,12 +37,12 @@ export default function Footer() {
                 alt=""
                 className=""
               />
-              WhatsApp
+              WhatsApp: +{whatsapp}
             </a>
           </li>
           <li>
             <a
-              href="https://t.me/Marina_She26"
+              href={`https://t.me/${telegram}`}
               className="flex items-center justify-start gap-2 hover:scale-110 origin-[0%_50%]"
             >
               <Image
@@ -39,13 +51,13 @@ export default function Footer() {
                 height={30}
                 alt=""
               />
-              Telegram
+              Telegram: {telegram}
             </a>
           </li>
 
           <li className="instagram">
             <a
-              href="https://www.instagram.com/marina_garden_soul/"
+              href={`https://www.instagram.com/${instagram}/`}
               className="flex items-center justify-start gap-2 hover:scale-110 origin-[0%_50%]"
             >
               <Image
@@ -54,13 +66,13 @@ export default function Footer() {
                 height={30}
                 alt=""
               />
-              @marina_garden_soul
+              Instagram: @marina_garden_soul
             </a>
           </li>
         </ul>
         <div className="mb-6">
-          <p className="font-bold">+995 59122 03 54</p>
-          <p className="font-bold">+7 920 410 48 20</p>
+          <p className="font-bold">{phone1}</p>
+          <p className="font-bold">{phone2}</p>
         </div>
 
         <p className="font-bold mb-6">Ландшафтный дизайнер Марина Шестакова</p>
