@@ -9,10 +9,10 @@ import { db } from "@/db";
 
 export default async function Home() {
   let settings;
-  // let about;
+  let services;
 
   try {
-    const [settingsData] = await Promise.all([
+    const [settingsData, servicesData] = await Promise.all([
       db.settings.findMany({
         where: {
           field: {
@@ -36,9 +36,16 @@ export default async function Home() {
       //     },
       //   },
       // }),
+
+      db.service.findMany({
+        orderBy: [
+          { order: "asc" }, // Primary sort by 'order' column
+          { createdAt: "desc" }, // Secondary sort by 'createdAt' column
+        ],
+      }),
     ]);
 
-    if (!settingsData) {
+    if (!settingsData || !servicesData) {
       return <div className="text-red-800">Данные не найдены.</div>;
     }
 
@@ -58,6 +65,8 @@ export default async function Home() {
       phone2:
         settingsData.find((element) => element.field === "phone2")?.value || "",
     };
+
+    services = servicesData;
 
     // about = {
     //   square1text: aboutData.find((el) => el.squareNumber === 1)?.text || "",
@@ -79,7 +88,7 @@ export default async function Home() {
         description_header={settings.description_header}
         description={settings.description}
       />
-      <Services />
+      <Services services={services} />
       <Parallax imageLink="/img/bg/garden-3.jpg" height={400}></Parallax>
       <Portfolio />
       <Footer

@@ -1,7 +1,16 @@
 import React from "react";
 import ServicesLi from "./services-li";
 
-export default function Services() {
+export default function Services({
+  services,
+}: {
+  services: {
+    id: string;
+    text: string;
+    imageFileName: string;
+    order: number | null;
+  }[];
+}) {
   return (
     <section className="py-5 max-w-screen-lg mx-auto mb-20 overflow-x-hidden md:w-2/3 px-8 md:px-0">
       <div className="">
@@ -11,7 +20,7 @@ export default function Services() {
       </div>
 
       <ul className="">
-        <ServicesLi
+        {/* <ServicesLi
           imageLink="/img/services/project.png"
           text="Разработка ландшафтного проекта с учетом ваших пожеланий и
             особенностей участка"
@@ -35,8 +44,14 @@ export default function Services() {
         <ServicesLi
           imageLink="/img/services/phytowall.png"
           text="Создание фитостен"
-        />
-        <li></li>
+        /> */}
+        {services.map((service) => (
+          <ServicesLi
+            text={service.text}
+            imageLink={`${process.env.NEXT_PUBLIC_AWS_S3_BUCKET_PROTOCOL}://${process.env.NEXT_PUBLIC_AWS_S3_BUCKET_LINK}/services/${service.imageFileName}`}
+            key={service.id}
+          />
+        ))}
       </ul>
     </section>
   );

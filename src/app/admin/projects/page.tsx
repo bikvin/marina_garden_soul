@@ -17,7 +17,7 @@ export default async function ProjectsEditPage() {
     <>
       <TopMenu page="projects" />
       <div className="max-w-screen-lg mx-auto ">
-        <div className={`adminFormContainer w-[80%]`}>
+        <div className={`adminFormContainer w-[80%] mx-auto`}>
           <h1 className="admin-form-header mt-10">Мои проекты</h1>
           <EditProjectsForm projectsData={projectsData} />
         </div>

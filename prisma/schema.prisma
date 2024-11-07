@@ -32,3 +32,12 @@ model Project {
   createdAt    DateTime @default(now())
   updatedAt    DateTime @updatedAt
 }
+
+model Service {
+  id            String   @id @default(cuid())
+  text          String
+  imageFileName String
+  order         Int?
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+}

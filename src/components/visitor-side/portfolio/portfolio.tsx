@@ -15,7 +15,7 @@ export default async function Portfolio() {
       console.warn("No data found or fileNamesArr is empty.");
     }
   } catch (err) {
-    console.error("Error fetching certificates:", err);
+    console.error("Error fetching data:", err);
   }
 
   // const SLIDES = [
