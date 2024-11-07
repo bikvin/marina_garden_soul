@@ -14,8 +14,8 @@ const config: Config = {
       },
       fontFamily: {
         // Adding Nunito Sans and Cormorant Garamond to the Tailwind config
-        nunito: ['"Nunito Sans"', "sans-serif"],
-        cormorant: ['"Cormorant Garamond"', "serif"],
+        nunito: ["var(--font-nunito)", "sans-serif"],
+        cormorant: ["var(--font-cormorant)", "serif"],
       },
     },
   },

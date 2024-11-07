@@ -6,7 +6,7 @@ export default function Header() {
   return (
     <header className="px-8 md:px-16 py-5 max-w-screen-lg mx-auto">
       <div className="grid grid-cols-1 md:grid-cols-3">
-        <div className="flex items-center justify-center uppercase font-cormorant text-lg tracking-[.25em] pb-4 md:pb-0">
+        <div className="flex items-center justify-center uppercase font-cormorant text-lg font-bold tracking-[.25em] pb-4 md:pb-0">
           <Link href="/">
             <h4 className="text-center md:text-left">Марина Шестакова</h4>
           </Link>

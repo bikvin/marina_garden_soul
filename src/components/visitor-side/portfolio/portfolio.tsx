@@ -18,18 +18,6 @@ export default async function Portfolio() {
     console.error("Error fetching data:", err);
   }
 
-  // const SLIDES = [
-  //   { filename: "dog.jpeg" },
-  //   { filename: "fence.jpeg" },
-  //   { filename: "variant1.jpeg" },
-  //   { filename: "variant2.jpeg" },
-  //   { filename: "flowers.jpeg" },
-  //   { filename: "plan.jpeg" },
-  //   { filename: "pond.jpeg" },
-  //   { filename: "pool.jpeg" },
-  //   { filename: "trees.jpeg" },
-  // ];
-
   const OPTIONS: EmblaOptionsType = { loop: true };
 
   return (
@@ -38,7 +26,7 @@ export default async function Portfolio() {
       className="py-5 max-w-screen-lg mx-auto mb-20 overflow-x-hidden md:w-2/3 px-8 md:px-0 mt-16"
     >
       <div className="">
-        <h3 className="font-cormorant text-xl md:text-2xl uppercase tracking-[.25em] font-thin border-b-2 border-maingreen">
+        <h3 className="font-cormorant text-xl md:text-2xl uppercase tracking-[.25em] font-bold border-b-2 border-maingreen">
           Мои проекты:
         </h3>
       </div>
